@@ -25,18 +25,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 shadow-md">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="bg-gray-900 border-b border-gray-700 shadow-md">
+      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
         <Link href="/" className="flex items-center">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap">
-            Next.js
+          <span className="self-center text-2xl font-bold whitespace-nowrap text-white">
+            Shadow Job Community
           </span>
         </Link>
         {/* Mobile menu button */}
         <div className="flex md:hidden">
           <button
             type="button"
-            className="text-gray-500 hover:text-gray-700 focus:outline-none"
+            className="text-gray-300 hover:text-white focus:outline-none transition-colors duration-300"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <svg
@@ -55,12 +55,17 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className={`w-full md:block md:w-auto ${menuOpen ? "block" : "hidden"}`} id="navbar-default">
+        <div
+          className={`w-full md:block md:w-auto transition-all duration-300 ${
+            menuOpen ? "block" : "hidden"
+          }`}
+          id="navbar-default"
+        >
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0">
             <li>
               <Link
                 href="/"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100"
+                className="block py-2 px-3 text-white rounded hover:bg-gray-700 transition-colors duration-300"
               >
                 Home
               </Link>
@@ -70,7 +75,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/addjobs"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100"
+                    className="block py-2 px-3 text-white rounded hover:bg-gray-700 transition-colors duration-300"
                   >
                     Add Job
                   </Link>
@@ -78,7 +83,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/dashboard"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100"
+                    className="block py-2 px-3 text-white rounded hover:bg-gray-700 transition-colors duration-300"
                   >
                     Dashboard
                   </Link>
@@ -86,7 +91,7 @@ const Navbar = () => {
                 <li className="relative">
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="flex items-center py-2 px-3 text-gray-900 rounded hover:bg-gray-100 focus:outline-none"
+                    className="flex items-center py-2 px-3 text-white rounded hover:bg-gray-700 focus:outline-none transition-colors duration-300"
                   >
                     {currentUser && currentUser.name
                       ? `Hi ${currentUser.name}`
@@ -100,10 +105,10 @@ const Navbar = () => {
                     </svg>
                   </button>
                   {dropdownOpen && (
-                    <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded shadow-md z-20">
+                    <div className="absolute right-0 mt-2 w-40 bg-gray-800 border border-gray-700 rounded shadow-md z-20 transition-all duration-300 transform origin-top-right scale-95">
                       <button
                         onClick={handleLogout}
-                        className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        className="block w-full text-left px-4 py-2 text-gray-300 hover:bg-gray-700 transition-colors duration-300"
                       >
                         Logout
                       </button>
@@ -116,7 +121,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/login"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100"
+                    className="block py-2 px-3 text-white rounded hover:bg-gray-700 transition-colors duration-300"
                   >
                     Sign In
                   </Link>
@@ -124,7 +129,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     href="/sinup"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100"
+                    className="block py-2 px-3 text-white rounded hover:bg-gray-700 transition-colors duration-300"
                   >
                     Sign Up
                   </Link>

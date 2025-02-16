@@ -6,17 +6,19 @@ export default function Home() {
   const { currentUser } = useCurrentUser();
 
   return (
-    <div className="max-w-3xl container mx-auto flex items-center justify-center min-h-screen">
-      <div className="flex flex-col space-y-2">
-        <h1 className="text-3xl font-bold">Full Stack Next Js App</h1>
-
-        {currentUser ? (
-          <h2 className="text-lg font-medium">Welcome, {currentUser.name}</h2>
-        ) : undefined}
-
-
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+      <main className="container mx-auto p-4">
+        <div className="mb-8">
+          <h1 className="mt-5 text-3xl font-bold text-gray-800 dark:text-white">
+          </h1>
+          {currentUser && (
+            <h2 className="text-lg font-medium text-gray-700 dark:text-gray-300">
+              Welcome, {currentUser.name}
+            </h2>
+          )}
+        </div>
         <Jobs />
-      </div>
+      </main>
     </div>
   );
 }
