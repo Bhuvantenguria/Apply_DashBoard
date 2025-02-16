@@ -33,7 +33,7 @@ const CreateJob = () => {
         status,
       };
 
-      const response = await fetch("http://localhost:3000/api/post/create", {
+      const response = await fetch("/api/post/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

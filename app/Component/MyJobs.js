@@ -14,7 +14,7 @@ const MyJobs = () => {
 
   const fetchJobs = async () => {
     try {
-      const response = await fetch("http://localhost:3000//api/post/getbyId"); // Fetch only logged-in user's jobs
+      const response = await fetch("/api/post/getbyId"); // Fetch only logged-in user's jobs
       if (!response.ok) {
         throw new Error("Failed to fetch jobs");
       }
@@ -27,7 +27,7 @@ const MyJobs = () => {
 
   const deleteJob = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/job/delete/${id}`, {
+      const response = await fetch(`/api/job/delete/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {

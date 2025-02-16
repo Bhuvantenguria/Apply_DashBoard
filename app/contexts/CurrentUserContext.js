@@ -11,7 +11,7 @@ export const CurrentUserProvider = ({ children }) => {
     // Fetch current user from the API
     const fetchCurrentUser = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/auth/current-user");
+        const response = await fetch("/api/auth/current-user");
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

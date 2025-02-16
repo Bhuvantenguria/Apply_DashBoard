@@ -13,7 +13,7 @@ const EditJob = ({ job, close, refresh }) => {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/post/edit/${job.id}`, {
+      const response = await fetch(`/api/post/edit/${job.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -14,7 +14,7 @@ const Jobs = () => {
   const getJobs = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/api/post/getAll");
+      const response = await fetch("/api/post/getAll");
 
       if (!response.ok) {
         throw new Error(`Failed to fetch jobs: ${response.statusText}`);
